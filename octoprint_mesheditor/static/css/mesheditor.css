@@ -1,0 +1,22 @@
+#tab_plugin_mesheditor table.mesh_grid {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+div.mesh_editor_outer {
+    display: flex;
+} 
+
+div.mesh_editor_outer div {
+    margin: 5px;
+}
+
+#tab_plugin_mesheditor button.mesh_button {
+    width: 100%;
+}
+
+#tab_plugin_mesheditor input.mesh_height {
+    width: 20px;
+    height: 100px;
+    appearance: slider-vertical;
+}

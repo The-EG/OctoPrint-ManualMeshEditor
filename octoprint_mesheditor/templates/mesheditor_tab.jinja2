@@ -1,0 +1,22 @@
+{% assets "js_client" %}
+<script src="{{ url_for("static", filename="js/lib/jquery/jquery.min.js") }}"></script>
+<script src="{{ url_for("static", filename="js/lib/lodash.min.js") }}"></script>
+<script type="text/javascript" src="{{ url_for("static", filename="webassets/packed_client.js") }}"></script>
+{% endassets %}
+
+<h3>Mesh Bed Leveling</h3>
+
+<div class="mesh_editor_outer">
+    <div>
+        <div id="mesheditor_mesh_grid"></div>
+        <button id="mesh_editor_get_mesh" class="btn btn-primary" data-bind="click: updateMesh">{{ _('Get Mesh') }}</button>
+        <button id="mesh_editor_save_eeprom" class="btn btn-primary" data-bind="click: saveToEEPROM">{{ _('Save to EEPROM') }}</button>
+    </div>
+    <div>
+        <div>Col: <span id="mesh_edit_row" data-bind="text: row"></span></div>
+        <div>Row: <span id="mesh_edit_col" data-bind="text: col"></span></div>
+        <div>Value: <input type="number" id="mesh_edit_val" data-bind="value: pointValue, attr: { min: settings.settings.plugins.mesheditor.mesh_min, max: settings.settings.plugins.mesheditor.mesh_max, step: settings.settings.plugins.mesheditor.mesh_increment }"></input></div>
+        <button id="mesh_editor_save_val_btn" disabled class="btn btn-primary" data-bind="click: savePoint">{{ _('Save Value') }}</button>
+    </div>
+</div>
+

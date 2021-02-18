@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_mesheditor/templates *
+recursive-include octoprint_mesheditor/translations *
+recursive-include octoprint_mesheditor/static *

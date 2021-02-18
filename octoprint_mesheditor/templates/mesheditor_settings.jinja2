@@ -1,0 +1,28 @@
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label">{{ _('Mesh Grid Size') }}</label>
+        <div class="controls">
+            <input type="number" class="input-block-level" data-bind="value: settings.plugins.mesheditor.grid_size">
+        </div>
+    </div>
+     <div class="control-group">
+        <label class="control-label">{{ _('Mesh Minimum Value') }}</label>
+        <div class="controls">
+            <input type="number" class="input-block-level" data-bind="value: settings.plugins.mesheditor.mesh_min">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Mesh Maximum Value') }}</label>
+        <div class="controls">
+            <input type="number" class="input-block-level" data-bind="value: settings.plugins.mesheditor.mesh_max">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Mesh Value Increment Amount') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.mesh_increment">
+        </div>
+    </div>
+</form>

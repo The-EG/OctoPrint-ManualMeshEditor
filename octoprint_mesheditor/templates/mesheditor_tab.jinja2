@@ -9,8 +9,8 @@
 <div class="mesh_editor_outer">
     <div>
         <div id="mesheditor_mesh_grid"></div>
-        <button id="mesh_editor_get_mesh" class="btn btn-primary" data-bind="click: updateMesh">{{ _('Get Mesh') }}</button>
-        <button id="mesh_editor_save_eeprom" class="btn btn-primary" data-bind="click: saveToEEPROM">{{ _('Save to EEPROM') }}</button>
+        <button id="mesh_editor_get_mesh" class="btn btn-primary" data-bind="click: updateMesh, enable: printerState.isReady">{{ _('Get Mesh') }}</button>
+        <button id="mesh_editor_save_eeprom" class="btn btn-primary" data-bind="click: saveToEEPROM, enable: printerState.isReady">{{ _('Save to EEPROM') }}</button>
     </div>
     <div>
         <div>Col: <span id="mesh_edit_row" data-bind="text: row"></span></div>

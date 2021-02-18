@@ -7,6 +7,7 @@ $(function() {
         self.col = ko.observable(0);
 
         self.settings = parameters[0];
+        self.printerState = parameters[1];
 
         self.selectPoint = function(event) {
             var col = parseInt($(event.target).attr('data-col'));
@@ -80,7 +81,7 @@ $(function() {
 
     OCTOPRINT_VIEWMODELS.push({
         construct: MeshEditorViewModel,
-        dependencies: ["settingsViewModel"],
+        dependencies: ["settingsViewModel","printerStateViewModel"],
         elements: ["#tab_plugin_mesheditor"]
     });
 });

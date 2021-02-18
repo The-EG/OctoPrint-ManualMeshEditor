@@ -8,7 +8,7 @@ import octoprint.events
 
 class MeshEditorPlugin(octoprint.plugin.SettingsPlugin,
 					   octoprint.plugin.AssetPlugin,
-                       octoprint.plugin.TemplatePlugin):
+					   octoprint.plugin.TemplatePlugin):
 
 	def __init__(self):
 		self.wait_g29 = False
@@ -44,7 +44,7 @@ class MeshEditorPlugin(octoprint.plugin.SettingsPlugin,
 		return None
 
 	def on_gcode_recieved(self, comm, line, *args, **kwargs):
-		if not self.wait_g29 or line=='wait' or line=='Not SD printing': return line # early out
+		if not self.wait_g29 or line.strip()=='wait' or line.strip()=='Not SD printing': return line # early out
 
 		if line.strip() == 'Mesh Bed Leveling has no data.':
 			self.mesh_data = None

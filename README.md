@@ -2,6 +2,8 @@
 
 Manual Mesh Editor allows a user to manually edit points of a mesh for Mesh Bed Leveling in Marlin. At this time, only Mesh Bed Leveling is supported, the mesh is retrieved with `G29 S0` and edited with `G29 S3`.
 
+![tab_screenshot](tab_screenshot.png)
+
 ## Setup
 
 Install ~~via the bundled [Plugin Manager](https://docs.octoprint.org/en/master/bundledplugins/pluginmanager.html)

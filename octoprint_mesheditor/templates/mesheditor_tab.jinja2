@@ -9,14 +9,23 @@
 <div class="mesh_editor_outer">
     <div>
         <div id="mesheditor_mesh_grid"></div>
-        <button id="mesh_editor_get_mesh" class="btn btn-primary" data-bind="click: updateMesh, enable: printerState.isReady">{{ _('Get Mesh') }}</button>
-        <button id="mesh_editor_save_eeprom" class="btn btn-primary" data-bind="click: saveToEEPROM, enable: printerState.isReady">{{ _('Save to EEPROM') }}</button>
+        <button id="mesh_editor_get_mesh" class="btn btn-primary" data-bind="click: updateMesh, enable: printerState.isReady">
+            <i class="fas fa-border-all"></i>
+            <span>Get Mesh</span>
+        </button>
+        <button id="mesh_editor_save_eeprom" class="btn btn-primary" data-bind="click: saveToEEPROM, enable: printerState.isReady">
+            <i class="fas fa-microchip"></i>
+            <span>Save to EEPROM</span>
+        </button>
     </div>
     <div>
         <div>Col: <span id="mesh_edit_row" data-bind="text: row"></span></div>
         <div>Row: <span id="mesh_edit_col" data-bind="text: col"></span></div>
         <div>Value: <input type="number" id="mesh_edit_val" data-bind="value: pointValue, attr: { min: settings.settings.plugins.mesheditor.mesh_min, max: settings.settings.plugins.mesheditor.mesh_max, step: settings.settings.plugins.mesheditor.mesh_increment }"></input></div>
-        <button id="mesh_editor_save_val_btn" disabled class="btn btn-primary" data-bind="click: savePoint">{{ _('Save Value') }}</button>
+        <button id="mesh_editor_save_val_btn" disabled class="btn btn-primary" data-bind="click: savePoint">
+            <i class="fas fa-crosshairs"></i>
+            <span>Save Value</span>
+        </button>
     </div>
 </div>
 

@@ -21,7 +21,14 @@ class MeshEditorPlugin(octoprint.plugin.SettingsPlugin,
 			grid_size=3,
 			mesh_min=-1,
 			mesh_max=1,
-			mesh_increment=0.05
+			mesh_increment=0.05,
+			move_offset_x=0,
+			move_offset_y=0,
+			move_mesh_inset=30,
+			move_z_hop=10,
+			move_speed_mms=25,
+			move_bed_width=230,
+			move_bed_length=230
 		)
 
 	def get_template_configs(self):

@@ -17,6 +17,7 @@ $(function() {
             self.col(col);
             self.pointValue(val);
             $('#mesh_editor_save_val_btn').prop('disabled', false);
+            $('#mesh_editor_move_to_btn').prop('disabled', false);
         }
 
 
@@ -27,6 +28,7 @@ $(function() {
             self.row('');
             self.col('');
             $('#mesh_editor_save_val_btn').prop('disabled',true);
+            $('#mesh_editor_move_to_btn').prop('disabled',true);
             OctoPrint.control.sendGcode("G29 S0");
         }
 
@@ -35,6 +37,33 @@ $(function() {
         self.savePoint = function() {
             OctoPrint.control.sendGcode(`G29 S3 I${self.col()} J${self.row()} Z${self.pointValue()}`);
             self.updateMesh();
+        }
+
+        self.moveToPoint = function() {
+            var bedW = parseFloat(self.settings.settings.plugins.mesheditor.move_bed_width());
+            var bedL = parseFloat(self.settings.settings.plugins.mesheditor.move_bed_length());
+            var zHop = parseFloat(self.settings.settings.plugins.mesheditor.move_z_hop());
+            var mms = parseFloat(self.settings.settings.plugins.mesheditor.move_speed_mms());
+            var offX = parseFloat(self.settings.settings.plugins.mesheditor.move_offset_x());
+            var offY = parseFloat(self.settings.settings.plugins.mesheditor.move_offset_y());
+            var gridPoints = parseFloat(self.settings.settings.plugins.mesheditor.grid_size());
+            var inset = parseFloat(self.settings.settings.plugins.mesheditor.move_mesh_inset());
+            var speed = mms * 60;
+
+            var c = self.col();
+            var r = gridPoints - 1 - self.row();
+
+            var x = (((bedW - (inset * 2)) / (gridPoints - 1)) * c) + offX + inset;
+            var y = (((bedL - (inset * 2)) / (gridPoints - 1)) * r) + offY + inset;
+
+            if (y > bedL) y = bedL;
+            if (x > bedW) x = bedW;
+
+            OctoPrint.control.sendGcode([
+                `G0 Z${zHop} F${speed}`,
+                `G0 X${x} Y${y} F${speed}`,
+                `G0 Z0 F${speed}`,
+            ]);
         }
         
         self.onEventplugin_mesheditor_mesh_ready = function(payload) {
@@ -71,6 +100,7 @@ $(function() {
                 }
             }
             $('#mesh_editor_save_val_btn').prop('disabled', true);
+            $('#mesh_editor_move_to_btn').prop('disabled', true);
             self.row('');
             self.col('');
             self.pointValue('');

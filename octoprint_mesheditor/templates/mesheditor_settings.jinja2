@@ -25,4 +25,53 @@
             <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.mesh_increment">
         </div>
     </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Mesh Inset') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_mesh_inset">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point X Offset') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_offset_x">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Y Offset') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_offset_y">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Z Hop Distance') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_z_hop">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Speed (mm/s)') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_speed_mms">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Bed Width') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_bed_width">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">{{ _('Move to Point Bed Length') }}</label>
+        <div class="controls">
+            <input type="number" min="0" max="1" step="0.001" class="input-block-level" data-bind="value: settings.plugins.mesheditor.move_bed_length">
+        </div>
+    </div>
 </form>

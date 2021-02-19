@@ -21,7 +21,7 @@
     <div>
         <div>Col: <span id="mesh_edit_row" data-bind="text: row"></span></div>
         <div>Row: <span id="mesh_edit_col" data-bind="text: col"></span></div>
-        <div>Value: <input type="number" id="mesh_edit_val" data-bind="value: pointValue, attr: { min: settings.settings.plugins.mesheditor.mesh_min, max: settings.settings.plugins.mesheditor.mesh_max, step: settings.settings.plugins.mesheditor.mesh_increment }"></input></div>
+        <div>Value: <input class="mesh_height" type="number" id="mesh_edit_val" data-bind="value: pointValue, attr: { min: settings.settings.plugins.mesheditor.mesh_min, max: settings.settings.plugins.mesheditor.mesh_max, step: settings.settings.plugins.mesheditor.mesh_increment }"></input></div>
         <button id="mesh_editor_save_val_btn" disabled class="btn btn-primary" data-bind="click: savePoint">
             <i class="fas fa-crosshairs"></i>
             <span>Save Value</span>

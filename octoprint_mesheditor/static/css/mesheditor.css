@@ -16,7 +16,6 @@ div.mesh_editor_outer div {
 }
 
 #tab_plugin_mesheditor input.mesh_height {
-    width: 20px;
-    height: 100px;
-    appearance: slider-vertical;
+    width: 5em;
 }
+
